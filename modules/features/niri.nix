@@ -9,9 +9,17 @@
 
 
 
-  perSystem = { pkgs, lib, ... }: {
+  perSystem = { pkgs, lib, self', ... }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
+      settings = {
+	spawn-at-startup =[
+	  (lib.getExe self'.packages.myNoctalia)
+	];
+	#binds = {
+	#  "Mod+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+	#};
+      };
       extraSettings = [ { include = ./niri-config.kdl; } ];
     };
 
