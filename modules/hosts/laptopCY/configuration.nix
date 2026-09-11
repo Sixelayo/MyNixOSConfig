@@ -62,12 +62,17 @@
 
   # Maybe all of this need to be moved elsewhare ?
   environment.systemPackages = with pkgs; [
-    vim 
-    wget
-    git
-    tmux
-    firefox
+    # tmp : only for set up
+    vim # use the wrapper later for nvim or my flake
+
+    # graphical app
     alacritty
+    kdePackages.dolphin
+    mpv imv featherpad
+    google-chrome firefox
+
+    #CLI utils
+    git tmux
   ];
 
 
