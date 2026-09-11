@@ -72,7 +72,10 @@
     google-chrome firefox
 
     #CLI utils
-    git tmux
+    git tmux tree ripgrep
+
+    # goofy stuff
+    fortune figlet pipes neo-cowsay cbonsai
   ];
 
 

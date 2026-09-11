@@ -20,6 +20,7 @@
 	spawn-at-startup =[
 	  (lib.getExe self'.packages.myNoctalia)
 	];
+	prefer-no-csd = _: { };
 	binds = {
 	# start other app
 	  "Mod+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
@@ -29,8 +30,11 @@
           "Mod+W".close-window = _: { };
           "Mod+F".maximize-column = _: { };
           "Mod+G".fullscreen-window = _: { };
-          "Mod+Shift+F".toggle-window-floating = _: { };
           "Mod+C".center-column = _: { };
+	  "Mod+P".screenshot-screen = _: { };
+	  "Mod+Shift+P".screenshot-window = _: { };
+	  "Mod+Alt+P".screenshot = _: { };
+	  "Mod+B".switch-preset-column-width = _: { };
 
 
 	# window focus
@@ -45,6 +49,12 @@
 	  "Mod+Shift+K".move-window-up-or-to-workspace-up = _: { };
           "Mod+Shift+Down".move-window-down-or-to-workspace-down = _: { };
 	  "Mod+Shift+J".move-window-down-or-to-workspace-down = _: { };
+
+          "Mod+Shift+V".toggle-window-floating = _: { };
+	  "Mod+V".switch-focus-between-floating-and-tiling = _: { };
+
+	#same column window
+	  "Mod+Comma".consume-or-expel-window-right = _: { };
 
 	# workspace
 	  "Mod+O".toggle-overview = _: { };
@@ -66,6 +76,14 @@
           "Mod+Ctrl+Down".set-window-height = "-5%";	"Mod+Ctrl+J".set-window-height = "-5%";
           "Mod+Ctrl+Up".set-window-height = "+5%";	"Mod+Ctrl+K".set-window-height = "+5%";
 
+	};
+	layout = {
+	  gaps = 8;
+	  focus-ring = {
+	    width = 4;
+	    active-color = "#c70a23";
+	    inactive-color ="#91414c";
+	  };
 	};
       };
       # depreciated, default settings
