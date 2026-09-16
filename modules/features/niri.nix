@@ -21,10 +21,13 @@
 	  (lib.getExe self'.packages.myNoctalia)
 	];
 	prefer-no-csd = _: { };
+	hotkey-overlay = { skip-at-startup = _:{ }; };
 	binds = {
 	# start other app
 	  "Mod+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
 	  "Mod+N".spawn-sh = "alacritty";
+	  "Mod+Ctrl+M".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call lockScreen lock";
+	  "Mod+X".show-hotkey-overlay = _: { };
 
 	# general
           "Mod+W".close-window = _: { };

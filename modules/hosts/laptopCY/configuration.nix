@@ -4,6 +4,7 @@
     imports = [
       self.nixosModules.laptopCYHardware
       self.nixosModules.niri
+      #self.nixosModules.myNoctalia #not nescessary, but usefull for debugging with noctalia msg or noctalia ipc
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -46,6 +47,11 @@
     layout = "fr";
     variant = "";
   };
+  services.upower.enable = true; #noctalia doesn't detect batter without it
+  services.displayManager.noctalia-greeter = {
+    enable = true;
+    settings.keyboard.layout = "fr";
+  };
 
   console.keyMap = "fr";
 
@@ -55,6 +61,15 @@
     description = "Alexis Just";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+  };
+
+  xdg.mime.defaultApplications = {
+    "video/*" = "mpv.desktop";
+    "audio/*" = "mpv.desktop";
+    "image/*" = "imv.desktop";
+    "text/plain" = "featherpad.desktop";
+
+    #"application/pdf" = "firefox.desktop";
   };
 
   # Allow unfree packages
