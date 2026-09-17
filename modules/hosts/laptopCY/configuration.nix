@@ -5,6 +5,7 @@
       self.nixosModules.laptopCYHardware
       self.nixosModules.niri
       self.nixosModules.cliUtils
+      self.nixosModules.neovim
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -78,7 +79,7 @@
   # Maybe all of this need to be moved elsewhare ?
   environment.systemPackages = with pkgs; [
     # tmp : only for set up
-    vim # use the wrapper later for nvim or my flake
+    #vim # use the wrapper later for nvim or my flake
 
     # graphical app
     alacritty
