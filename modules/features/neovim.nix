@@ -30,7 +30,7 @@
 
         nvim-lspconfig = nvim-lspconfig;
 
-	nvim-treesitter = nvim-treesitter;
+	nvim-treesitter = nvim-treesitter.withAllGrammars;
       };
     };
   };

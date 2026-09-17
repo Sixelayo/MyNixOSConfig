@@ -29,14 +29,13 @@ vim.cmd.colorscheme("tokyonight")
 -- Highlighting
 -- ============================================================================
 
-vim.api.nvim_set_hl(0, "NormalFloat", {
-    bg = "#ffd900",
-})
+vim.api.nvim_set_hl(0, "DiagnosticFloatingError",	{ fg = "#f7768e", bg = "#ffffff", })
+vim.api.nvim_set_hl(0, "DiagnosticFloatingWarn",	{ fg = "#e0af68", bg = "#ffffff", })
+vim.api.nvim_set_hl(0, "DiagnosticFloatingInfo",	{ fg = "#7dcfff", bg = "#ffffff", })
+vim.api.nvim_set_hl(0, "DiagnosticFloatingHint",	{ fg = "#1abc9c", bg = "#ffffff", })
 
-vim.api.nvim_set_hl(0, "FloatBorder", {
-    bg = "#212121",
-})
-
+vim.api.nvim_set_hl(0, "NormalFloat",	{ fg = "#c0caf5", bg = "#16161e", })
+vim.api.nvim_set_hl(0, "FloatBorder",	{ fg = "#7dcfff", bg = "#16161e", })
 
 -- ============================================================================
 -- AZERTY number mappings
@@ -194,9 +193,11 @@ vim.api.nvim_create_autocmd("FileType", {
 -- LSP
 -- ============================================================================
 
+-- Work in progress
+
 vim.lsp.config("pyright", {})
 vim.lsp.config("nil_ls", {})
-vim.lsp.config("rust_analyzer", {})
+vim.lsp.config("rust_analyzer", { cmd = {"rust-analyzer"}, })
 vim.lsp.config("gdscript", {})
 vim.lsp.config("wgsl_analyzer", {})
 
