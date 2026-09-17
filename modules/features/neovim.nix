@@ -10,9 +10,7 @@
     packages.neovim = inputs.wrapper-modules.wrappers.neovim.wrap {
       inherit pkgs;
 
-      config = {
-        "init.lua".source = ./neovim.lua;
-      };
+      settings.config_directory = ./neovim;
     };
   };
 }
