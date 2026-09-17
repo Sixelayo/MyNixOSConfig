@@ -4,7 +4,7 @@
     imports = [
       self.nixosModules.laptopCYHardware
       self.nixosModules.niri
-      #self.nixosModules.myNoctalia #not nescessary, but usefull for debugging with noctalia msg or noctalia ipc
+      self.nixosModules.cliUtils
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -85,9 +85,6 @@
     kdePackages.dolphin
     mpv imv featherpad
     google-chrome firefox
-
-    #CLI utils
-    git tmux tree ripgrep
 
     # goofy stuff
     fortune figlet pipes neo-cowsay cbonsai
