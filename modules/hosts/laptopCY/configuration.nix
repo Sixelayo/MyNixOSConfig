@@ -25,6 +25,13 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true; # Ensures the controller is powered on at boot
+  };
+
+  # Optional: Enable Blueman daemon if Noctalia relies on blueman-applet/D-Bus integrations
+  services.blueman.enable = true;
 
   time.timeZone = "Europe/Paris";
 
