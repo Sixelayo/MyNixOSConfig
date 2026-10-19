@@ -10,7 +10,7 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-##### Below is a paste of the default config with some deletion !
+  ##### Below is a paste of the default config with some deletion !
 
   # Use the systemd-boot EFI boot loader.
     boot.loader.systemd-boot.enable = true;
