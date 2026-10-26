@@ -19,10 +19,10 @@
     networking.hostName = "nixos"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-    services.displayManager.noctalia-greeter = {
-      enable = true;
-      settings.keyboard.layout = "fr";
-    };
+    # services.displayManager.noctalia-greeter = {
+    #   enable = true;
+    #   settings.keyboard.layout = "fr";
+    # };
 
     # Configure keymap in X11
     services.xserver.xkb = {
