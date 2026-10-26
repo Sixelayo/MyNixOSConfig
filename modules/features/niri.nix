@@ -20,8 +20,11 @@
 	spawn-at-startup =[
 	  (lib.getExe self'.packages.myNoctalia)
 	];
+	# Nescessary for X11 only app
+	# xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 	prefer-no-csd = _: { };
 	hotkey-overlay = { skip-at-startup = _:{ }; };
+	input = { keyboard = { numlock = _: { }; }; };
 	binds = {
 	# start other app
 	  "Mod+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
