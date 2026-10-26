@@ -92,6 +92,7 @@
       alacritty
       kdePackages.dolphin
       mpv imv featherpad
+      github-desktop
       google-chrome firefox
   
       # goofy stuff
